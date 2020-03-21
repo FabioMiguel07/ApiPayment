@@ -1,0 +1,93 @@
+Pedido: 202003201235
+CardNumber :5517502634934681
+cardToken: 8ce6e556-834b-4062-8505-75e9b1d9ed8d
+PaymentId: 387e6e3a-2b89-4e8c-92f1-4a9d311ca7bb
+Status : 1
+
+
+{
+  "MerchantOrderId": "202003201205",
+  "Customer": {
+    "Name": "Comprador Miguel",
+    "Identity": "11225468954",
+    "IdentityType": "CPF",
+    "Email": "compradorteste@teste.com",
+    "Birthdate": "1991-01-02",
+    "Address": {
+      "Street": "Rua Teste",
+      "Number": "123",
+      "Complement": "AP 123",
+      "ZipCode": "12345987",
+      "City": "Rio de Janeiro",
+      "State": "RJ",
+      "Country": "BRA"
+    },
+    "DeliveryAddress": {
+      "Street": "Rua Teste",
+      "Number": "123",
+      "Complement": "AP 123",
+      "ZipCode": "12345987",
+      "City": "Rio de Janeiro",
+      "State": "RJ",
+      "Country": "BRA"
+    }
+  },
+  "Payment": {
+    "ServiceTaxAmount": 0,
+    "Installments": 1,
+    "Interest": 0,
+    "Capture": false,
+    "Authenticate": false,
+    "Recurrent": false,
+    "CreditCard": {
+      "SaveCard": false,
+      "CardToken": "288d8b07-8e08-41dc-8bca-c8fb467cf1af",
+      "Brand": "Master"
+    },
+    "Tid": "0320012422015",
+    "ProofOfSale": "2422015",
+    "AuthorizationCode": "562622",
+    "SoftDescriptor": "Entrega Aki",
+    "Provider": "Simulado",
+    "IsQrCode": false,
+    "PaymentFacilitator": {
+      "EstablishmentCode": "1234",
+      "SubEstablishment": {
+        "EstablishmentCode": "1234",
+        "Mcc": "1234",
+        "Address": "Alameda Grajau, 512",
+        "City": "Barueri",
+        "State": "SP",
+        "PostalCode": "06455914",
+        "PhoneNumber": "1155855585"
+      }
+    },
+    "Amount": 10,
+    "ReceivedDate": "2020-03-20 13:24:21",
+    "Status": 1,
+    "IsSplitted": false,
+    "ReturnMessage": "Operation Successful",
+    "ReturnCode": "4",
+    "PaymentId": "0dc030a6-8960-4723-8787-87d32f3bc521",
+    "Type": "CreditCard",
+    "Currency": "BRL",
+    "Country": "BRA",
+    "Links": [
+      {
+        "Method": "GET",
+        "Rel": "self",
+        "Href": "https://apiquerysandbox.cieloecommerce.cielo.com.br/1/sales/0dc030a6-8960-4723-8787-87d32f3bc521"
+      },
+      {
+        "Method": "PUT",
+        "Rel": "capture",
+        "Href": "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/0dc030a6-8960-4723-8787-87d32f3bc521/capture"
+      },
+      {
+        "Method": "PUT",
+        "Rel": "void",
+        "Href": "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/0dc030a6-8960-4723-8787-87d32f3bc521/void"
+      }
+    ]
+  }
+}
