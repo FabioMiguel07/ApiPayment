@@ -6,6 +6,7 @@ sudo npm cache clean -f
 sudo npm install -g -y n
 sudo n stable -y
 sudo npm install -g -y yarn
+cd /home/ubuntu
 git clone https://github.com/FabioMiguel07/ApiPayment.git
 cd ApiPayment
 npm install
