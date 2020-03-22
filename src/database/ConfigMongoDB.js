@@ -1,11 +1,19 @@
 import mongoose from 'mongoose';
 import 'dotenv/config';
+import Logger from '../log/LoggerService';
+
+const logger = new Logger('ConfigMongoDB');
 
 class ConfigMongoDB {
 
     connetion() {
+        logger.setLogData({"MongoDB":"MongoDB"});
+
+        logger.info("Inicializando Banco de Dados" , "MongoDB");
+
         const stringConnection = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}` + process.env.MONGO_URL;
-        console.log('String Connection: ' + stringConnection);
+
+        logger.info("String Connection: " + stringConnection, "MongoDB");
 
         mongoose.connect(stringConnection, {
             useNewUrlParser: true,

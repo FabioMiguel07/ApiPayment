@@ -1,0 +1,7 @@
+Sat, 21 Mar 2020 22:43:55 GMT | INFO | TokenController.log | Request Recebido.. | data: {"MerchantOrderId":2020032013274} | log_data: {"MerchantOrderId":2020032013274} | 
+Sat, 21 Mar 2020 22:43:56 GMT | INFO | TokenController.log | Cliente:  | data: "Compra para Cancelamento 55" | log_data: {"MerchantOrderId":2020032013274} | 
+Sat, 21 Mar 2020 22:43:56 GMT | INFO | TokenController.log | Token Cartao. | data: "288d8b07-8e08-41dc-8bca-c8fb467cf1af" | log_data: {"MerchantOrderId":2020032013274} | 
+Sat, 21 Mar 2020 22:43:56 GMT | INFO | TokenController.log | URL:  | data: "https://apiquerysandbox.cieloecommerce.cielo.com.br/1/card/288d8b07-8e08-41dc-8bca-c8fb467cf1af" | log_data: {"MerchantOrderId":2020032013274} | 
+Sat, 21 Mar 2020 22:43:57 GMT | INFO | TokenController.log | Numero Cartao Mascarado: ************5584 | log_data: {"MerchantOrderId":2020032013274} | 
+Sat, 21 Mar 2020 22:43:57 GMT | INFO | TokenController.log | Nome Cartao.Comprador Cielo Visa | log_data: {"MerchantOrderId":2020032013274} | 
+Sat, 21 Mar 2020 22:43:57 GMT | INFO | TokenController.log | Data Expiracao: 02/2021 | log_data: {"MerchantOrderId":2020032013274} | 

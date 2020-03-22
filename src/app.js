@@ -2,7 +2,7 @@ import 'dotenv/config';
 import express from 'express';
 import 'express-async-errors';
 import routes from './routes';
-import ConfigMongoDB from '../src/database/configMongoDB';
+import ConfigMongoDB from './database/ConfigMongoDB';
 import Youch from 'youch';
 
 
@@ -29,7 +29,7 @@ class App {
     exceptionHandler() {
         this.server.use(async (error, request, response, next) => {
 
-            if (process.env.NODE_ENV === 'desenvolvimento') {
+            if (process.env.MODE_ENV === 'desenvolvimento') {
                 return response.status(500).json(await new Youch(error, request).toJSON());
             } else {
                 return response.status(500).json({

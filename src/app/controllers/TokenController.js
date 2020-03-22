@@ -1,7 +1,9 @@
 import * as Yup from 'yup';
 import axios from 'axios';
 import Token from "../models/Token";
+import Logger from '../../log/LoggerService';
 
+const logger = new Logger('TokenController');
 
 class TokenController {
 
@@ -10,11 +12,17 @@ class TokenController {
 
         const { MerchantOrderId } = request.body;
 
+        logger.setLogData(request.body);
+        await logger.info("Request Recebido.. GET" , request.body);
+
         const pedido = await Token.find({
             merchantOrderId: MerchantOrderId
         });
 
         if (pedido.length === 0){
+
+            await logger.error("Nao foram encontrados dados para a consulta: " + MerchantOrderId);
+
             return response.status(404).json({
                 error: 99,
                 message: "Nao foram encontrados dados para a consulta"
@@ -23,6 +31,11 @@ class TokenController {
         } else {
 
             const { links: {Href:Url} , customerName, cardToken, createAt } = pedido[0];
+
+            await logger.info("Cliente: ", customerName);
+            await logger.info("Token Cartao: ", cardToken);
+            await logger.info("URL: ", Url);
+
 
             //Buscar Dados
             try {
@@ -36,6 +49,10 @@ class TokenController {
                 });
 
                 const {CardNumber, Holder, ExpirationDate } = respCielo.data;
+
+                await logger.info("Numero Cartao Mascarado: " + CardNumber);
+                await logger.info("Nome Cartao: " + Holder);
+                await logger.info("Data Expiracao: " + ExpirationDate);
 
 
                 return response.status(200).json({
@@ -53,6 +70,7 @@ class TokenController {
                 });
 
             } catch (e) {
+                await logger.error("Nao foram encontrados dados Pagamentos para o Pedido: " + MerchantOrderId);
                 return response.status(404).json({
                     error: 99,
                     message: "Nao foram encontrados dados Pagamentos para o Pedido: " + MerchantOrderId,
@@ -70,7 +88,10 @@ class TokenController {
     //Criacao
     async store(request, response){
 
-        //Recuperando informacoes do body
+        logger.setLogData(request.body);
+        await logger.info("Request Recebido.. POST" , request.body);
+
+
         const { MerchantOrderId , CustomerName , CardNumber, Holder, ExpirationDate, Brand } = request.body;
 
         const schema = Yup.object().shape({
@@ -89,10 +110,7 @@ class TokenController {
             });
         }
 
-        console.log('API TOKEN: ' + `${process.env.API_CIELO_DEV}/${process.env.URI_TOKEN_CARTAO}`);
-
-        //Recuperando informacoes do body
-        //const { CustomerName , CardNumber, Holder, ExpirationDate, Brand } = request.body;
+        await logger.info("API GERAR TOKEN CARTAO.."  + `${process.env.API_CIELO_DEV}/${process.env.URI_TOKEN_CARTAO}`);
 
         const respCielo = await axios.post(
             `${process.env.API_CIELO_DEV}/${process.env.URI_TOKEN_CARTAO}`,
@@ -109,6 +127,9 @@ class TokenController {
         const { CardToken , Links} = respCielo.data;
 
         console.log('Cartao Tokenizado: ' + CardToken);
+        await logger.info("Response CIELO: "  + JSON.stringify(respCielo.data));
+        await logger.info("Cartao Tokenizado: "  + CardToken);
+
 
         //Cadastro do Cartao Tokenizado
         const token = await Token.create({
@@ -118,6 +139,8 @@ class TokenController {
             links: Links,
             createAt: new Date()
         });
+
+        await logger.info("Token Gravado: "  + token._id);
 
         return response.status(200).json({
             error: 0,
