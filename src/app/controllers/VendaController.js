@@ -8,9 +8,11 @@ class VendaController {
 
     async index(request ,response){
 
-          logger.setLogData(request.query);
-          await logger.info("Request Recebido.. GET" , request.query);
-          const { PaymentId } = request.query;
+          logger.setLogData(request.params.PaymentId);
+          await logger.info("Request Recebido.. GET" , request.params.PaymentId);
+
+          const { PaymentId } = request.params;
+          console.log("Request Recebido.. GET" , PaymentId);
 
           try {
 

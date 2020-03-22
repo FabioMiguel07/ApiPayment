@@ -1,0 +1,33 @@
+#!/bin/bash
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install -y npm
+sudo npm cache clean -f
+sudo npm install -g -y n
+sudo n stable -y
+sudo npm install -g -y yarn
+cd /home/ubuntu
+mkdir apilogs
+chmod 775 apilogs
+sudo git clone https://github.com/FabioMiguel07/ApiPayment.git
+cd ApiPayment
+sudo npm install
+npm start
+
+#Depois de criar a instancia na amazon, entrar na pasta do usuario /home/ubuntu
+e criar um scrip sh com permissao 775.
+
+#!/bin/bash
+
+if [ -e "/home/ubuntu/ApiPayment"]
+then
+        sudo rm -rf ApiPayment
+else
+        echo 'Diretorio nao Existe' ;
+if
+
+exit
+
+
+http://ec2-18-230-8-146.sa-east-1.compute.amazonaws.com:3000/token/?MerchantOrderId=202003201307
+https://o66dsg6u52.execute-api.sa-east-1.amazonaws.com/segundo_deploy/token/202003201307?MerchantOrderId=202003201307

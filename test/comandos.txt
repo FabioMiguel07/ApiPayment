@@ -7,8 +7,17 @@ sudo npm install -g -y n
 sudo n stable -y
 sudo npm install -g -y yarn
 cd /home/ubuntu
+if [ -e "/home/ubuntu/apilogs"]
+then
+else
 mkdir apilogs
+fi
 chmod 775 apilogs
+if [ -e "/home/ubuntu/ApiPayment"]
+then
+
+else
+if
 git clone https://github.com/FabioMiguel07/ApiPayment.git
 cd ApiPayment
 npm install

@@ -10,10 +10,11 @@ class TokenController {
     //Consulta
     async index(request ,response){
 
-        const { MerchantOrderId } = request.query;
+        const { MerchantOrderId } = request.params;
 
-        logger.setLogData(request.query);
-        await logger.info("Request Recebido.. GET" , request.query);
+        logger.setLogData(request.params.MerchantOrderId);
+        await logger.info("Request Recebido.. GET" , request.params.MerchantOrderId);
+        console.log("Request Recebido T.. GET" , MerchantOrderId);
 
         const pedido = await Token.find({
             merchantOrderId: MerchantOrderId
@@ -21,7 +22,7 @@ class TokenController {
 
         if (pedido.length === 0){
 
-            await logger.error("Nao foram encontrados dados para a consulta: " + MerchantOrderId);
+            console.log("Nao foram encontrados dados para a consulta: " + MerchantOrderId);
 
             return response.status(404).json({
                 error: 99,

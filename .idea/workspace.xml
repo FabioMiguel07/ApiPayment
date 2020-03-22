@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0849a653-4cf5-48af-8cea-e4de5b2a8edc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/test/comandos2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/controllers/TokenController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controllers/TokenController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/controllers/VendaController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controllers/VendaController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/comandos.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/comandos.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +66,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/test" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -73,11 +76,12 @@
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -127,7 +131,7 @@
       <workItem from="1584712233173" duration="13042000" />
       <workItem from="1584735019473" duration="8241000" />
       <workItem from="1584810075425" duration="20461000" />
-      <workItem from="1584886091952" duration="925000" />
+      <workItem from="1584886091952" duration="9689000" />
     </task>
     <servers />
   </component>
@@ -156,6 +160,14 @@
       <screen x="1680" y="152" width="3008" height="1669" />
     </state>
     <state x="2066" y="670" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/0.23.1680.966/1680.152.3008.1669@1680.152.3008.1669" timestamp="1584735098700" />
+    <state x="2139" y="646" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584910119407">
+      <screen x="1680" y="152" width="3008" height="1594" />
+    </state>
+    <state x="2139" y="646" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1680.1027/1680.152.3008.1594@1680.152.3008.1594" timestamp="1584910119407" />
+    <state x="1789" y="276" key="DiffContextDialog" timestamp="1584887669938">
+      <screen x="1680" y="152" width="3008" height="1594" />
+    </state>
+    <state x="1789" y="276" key="DiffContextDialog/0.23.1680.1027/1680.152.3008.1594@1680.152.3008.1594" timestamp="1584887669938" />
     <state x="2140" y="625" key="Github.ShareDialog" timestamp="1584540067346">
       <screen x="1680" y="152" width="3008" height="1669" />
     </state>
@@ -184,10 +196,10 @@
     <state width="1273" height="446" key="GridCell.Tab.0.right/0.0.1680.1050/1680.152.3008.1594@1680.152.3008.1594" timestamp="1584648453403" />
     <state width="1273" height="446" key="GridCell.Tab.0.right/0.0.1680.989/1680.152.3008.1669@1680.152.3008.1669" timestamp="1584724206128" />
     <state width="1646" height="404" key="GridCell.Tab.0.right/0.23.1680.1027/1680.152.3008.1594@1680.152.3008.1594" timestamp="1584837292122" />
-    <state x="1795" y="406" key="Vcs.Push.Dialog.v2" timestamp="1584838708581">
+    <state x="1795" y="406" key="Vcs.Push.Dialog.v2" timestamp="1584887671543">
       <screen x="1680" y="152" width="3008" height="1594" />
     </state>
-    <state x="1795" y="406" key="Vcs.Push.Dialog.v2/0.23.1680.1027/1680.152.3008.1594@1680.152.3008.1594" timestamp="1584838708581" />
+    <state x="1795" y="406" key="Vcs.Push.Dialog.v2/0.23.1680.1027/1680.152.3008.1594@1680.152.3008.1594" timestamp="1584887671543" />
     <state x="1795" y="418" key="Vcs.Push.Dialog.v2/0.23.1680.967/1680.152.3008.1669@1680.152.3008.1669" timestamp="1584540088035" />
   </component>
 </project>
