@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0849a653-4cf5-48af-8cea-e4de5b2a8edc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/logsTokenControllerlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/log/LoggerService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nodemon.json" beforeDir="false" afterPath="$PROJECT_DIR$/nodemon.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/controllers/TokenController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controllers/TokenController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/controllers/VendaController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controllers/VendaController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/configMongoDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/ConfigMongoDB.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/comandos.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/comandos.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn-error.log" beforeDir="false" afterPath="$PROJECT_DIR$/yarn-error.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +126,8 @@
       <workItem from="1584639107718" duration="9787000" />
       <workItem from="1584712233173" duration="13042000" />
       <workItem from="1584735019473" duration="8241000" />
-      <workItem from="1584810075425" duration="18968000" />
+      <workItem from="1584810075425" duration="20461000" />
+      <workItem from="1584886091952" duration="925000" />
     </task>
     <servers />
   </component>
@@ -194,10 +184,10 @@
     <state width="1273" height="446" key="GridCell.Tab.0.right/0.0.1680.1050/1680.152.3008.1594@1680.152.3008.1594" timestamp="1584648453403" />
     <state width="1273" height="446" key="GridCell.Tab.0.right/0.0.1680.989/1680.152.3008.1669@1680.152.3008.1669" timestamp="1584724206128" />
     <state width="1646" height="404" key="GridCell.Tab.0.right/0.23.1680.1027/1680.152.3008.1594@1680.152.3008.1594" timestamp="1584837292122" />
-    <state x="1795" y="406" key="Vcs.Push.Dialog.v2" timestamp="1584825918713">
+    <state x="1795" y="406" key="Vcs.Push.Dialog.v2" timestamp="1584838708581">
       <screen x="1680" y="152" width="3008" height="1594" />
     </state>
-    <state x="1795" y="406" key="Vcs.Push.Dialog.v2/0.23.1680.1027/1680.152.3008.1594@1680.152.3008.1594" timestamp="1584825918713" />
+    <state x="1795" y="406" key="Vcs.Push.Dialog.v2/0.23.1680.1027/1680.152.3008.1594@1680.152.3008.1594" timestamp="1584838708581" />
     <state x="1795" y="418" key="Vcs.Push.Dialog.v2/0.23.1680.967/1680.152.3008.1669@1680.152.3008.1669" timestamp="1584540088035" />
   </component>
 </project>

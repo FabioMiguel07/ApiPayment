@@ -10,10 +10,10 @@ class TokenController {
     //Consulta
     async index(request ,response){
 
-        const { MerchantOrderId } = request.body;
+        const { MerchantOrderId } = request.query;
 
-        logger.setLogData(request.body);
-        await logger.info("Request Recebido.. GET" , request.body);
+        logger.setLogData(request.query);
+        await logger.info("Request Recebido.. GET" , request.query);
 
         const pedido = await Token.find({
             merchantOrderId: MerchantOrderId
@@ -35,7 +35,6 @@ class TokenController {
             await logger.info("Cliente: ", customerName);
             await logger.info("Token Cartao: ", cardToken);
             await logger.info("URL: ", Url);
-
 
             //Buscar Dados
             try {
