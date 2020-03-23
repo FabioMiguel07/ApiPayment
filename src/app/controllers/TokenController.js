@@ -3,6 +3,7 @@ import axios from 'axios';
 import Token from "../models/Token";
 import Logger from '../../log/LoggerService';
 
+
 const logger = new Logger('TokenController');
 
 class TokenController {
@@ -14,15 +15,12 @@ class TokenController {
 
         logger.setLogData(request.params.MerchantOrderId);
         await logger.info("Request Recebido.. GET" , request.params.MerchantOrderId);
-        console.log("Request Recebido T.. GET" , MerchantOrderId);
 
         const pedido = await Token.find({
             merchantOrderId: MerchantOrderId
         });
 
         if (pedido.length === 0){
-
-            console.log("Nao foram encontrados dados para a consulta: " + MerchantOrderId);
 
             return response.status(404).json({
                 error: 99,

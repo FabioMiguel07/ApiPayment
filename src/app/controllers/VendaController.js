@@ -117,10 +117,10 @@ class VendaController {
 
     async update(request ,response){
 
-         const { PaymentId } = request.body;
+         const { PaymentId } = request.params;
 
-         logger.setLogData(request.body);
-         await logger.info("Request Recebido Cancelamento.. PUT: " , request.body);
+         logger.setLogData(request.params.PaymentId);
+         await logger.info("Request Recebido Cancelamento.. PUT: " , request.params);
 
          try {
 
