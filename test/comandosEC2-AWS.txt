@@ -1,0 +1,37 @@
+Content-Type: multipart/mixed; boundary="//"
+MIME-Version: 1.0
+
+--//
+Content-Type: text/cloud-config; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment; filename="cloud-config.txt"
+
+#cloud-config
+cloud_final_modules:
+- [scripts-user, always]
+
+--//
+Content-Type: text/x-shellscript; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment; filename="userdata.txt"
+
+#!/bin/bash
+/bin/echo "Hello World" >> /tmp/testfile.txt
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install -y npm
+sudo npm cache clean -f
+sudo npm install -g -y n
+sudo n stable -y
+sudo npm install -g -y yarn
+cd /home/ubuntu
+mkdir apilogs
+chmod 775 apilogs
+sudo rm -rf ApiPayment
+git clone https://github.com/FabioMiguel07/ApiPayment.git
+cd ApiPayment
+npm install
+npm start
+--//
