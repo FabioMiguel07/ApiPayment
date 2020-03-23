@@ -4,7 +4,8 @@ class Init {
 
         return response.status(200).json({
             message: {
-                status: "Ok",
+                status: "Ambiente: " + process.env.MODE_ENV,
+                versao: "Versao: " + process.env.APP_VERSAO,
                 date: new Date()
             }
         })
