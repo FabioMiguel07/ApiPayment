@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 const TokenSchema = new mongoose.Schema({
     merchantOrderId: {
         type: Number,
-        required: true
+        index: true,
     },
     customerName: {
         type: String,
@@ -21,5 +21,8 @@ const TokenSchema = new mongoose.Schema({
     timestamp: true
 });
 
+TokenSchema.index({
+    merchantOrderId: 1
+});
 
 export default mongoose.model('Token', TokenSchema);

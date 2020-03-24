@@ -2,9 +2,8 @@ import * as Yup from 'yup';
 import axios from 'axios';
 import Token from "../models/Token";
 import Logger from '../../log/LoggerService'
-import Cryptr from 'cryptr';
-
 const logger = new Logger('TokenController');
+import Cryptr from 'cryptr';
 const crypt = new Cryptr(process.env.APP_SECRET);
 
 class TokenController {

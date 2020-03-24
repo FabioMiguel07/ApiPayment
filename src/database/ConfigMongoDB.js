@@ -16,11 +16,12 @@ class ConfigMongoDB {
         const stringConnection = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}`
             + mongoURL;
 
-        logger.info("String Connection: " + stringConnection, "MongoDB");
+        logger.info("String Connection: " + stringConnection, "MongoDB" );
 
         mongoose.connect(stringConnection, {
             useNewUrlParser: true,
-            useUnifiedTopology: true
+            useUnifiedTopology: true,
+            autoIndex: false
         });
     }
 

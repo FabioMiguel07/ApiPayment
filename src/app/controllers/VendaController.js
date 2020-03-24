@@ -1,7 +1,10 @@
 import {format, parseISO} from 'date-fns';
 import axios from 'axios';
 import Logger from '../../log/LoggerService';
+import Token from "../models/Token";
+import Cryptr from 'cryptr';
 
+const crypt = new Cryptr(process.env.APP_SECRET);
 const logger = new Logger('VendaController');
 
 class VendaController {
@@ -107,6 +110,8 @@ class VendaController {
 
             });
             await logger.info("Response Cielo: " + JSON.stringify(respCielo.data));
+
+
             return response.status(200).json({
                 error: 0,
                 message: respCielo.data
