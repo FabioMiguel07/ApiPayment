@@ -14,13 +14,18 @@ class VendaController {
           const { PaymentId } = request.params;
           console.log("Request Recebido.. GET" , PaymentId);
 
+          //Recupera URL de Desenvolvimento ou Producao para acesso a Cielo
+          const URLCielo = process.env.MODE_ENV === 'Producao' ?
+                           process.env.API_CIELO_CONSULTA :
+                           process.env.API_CIELO_CONSULTA_DEV;
+
           try {
 
-            await logger.info('API TOKEN Consulta: ' + `${process.env.API_CIELO_CONSULTA_DEV}/${process.env.URI_VENDA_CARTAO}` + PaymentId);
+            await logger.info('API TOKEN Consulta: ' + URLCielo +
+                process.env.URI_VENDA_CARTAO + PaymentId);
 
             const venda = await axios.get(
-            `${process.env.API_CIELO_CONSULTA_DEV}/${process.env.URI_VENDA_CARTAO}` +
-                PaymentId
+            URLCielo + process.env.URI_VENDA_CARTAO + PaymentId
             , {
                 headers: {
                     MerchantId: process.env.MERCHANT_ID,
@@ -83,12 +88,16 @@ class VendaController {
                 message: "Valor de venda deve ser maior que R$ 0.00 "
             })
         }
+        //Recupera URL de Desenvolvimento ou Producao para acesso a Cielo
+        const URLCielo = process.env.MODE_ENV === 'Producao' ?
+                         process.env.API_CIELO :
+                         process.env.API_CIELO_DEV;
 
-        await logger.info('API TOKEN VENDA : ' + `${process.env.API_CIELO_DEV}/${process.env.URI_VENDA_CARTAO}`);
+        await logger.info('API TOKEN VENDA : ' + URLCielo + process.env.URI_VENDA_CARTAO);
 
         try {
             const respCielo = await axios.post(
-            `${process.env.API_CIELO_DEV}/${process.env.URI_VENDA_CARTAO}`,
+            URLCielo + process.env.URI_VENDA_CARTAO,
             request.body
             , {
                 headers: {
@@ -122,12 +131,15 @@ class VendaController {
          logger.setLogData(request.params.PaymentId);
          await logger.info("Request Recebido Cancelamento.. PUT: " , request.params);
 
+         //Recupera URL de Desenvolvimento ou Producao para acesso a Cielo
+         const URLCielo = process.env.MODE_ENV === 'Producao' ?
+                          process.env.API_CIELO_CONSULTA :
+                          process.env.API_CIELO_CONSULTA_DEV;
          try {
 
             await logger.info("Recuperar os dados da Compra pelo Id de Pagamento: " + PaymentId);
             const venda = await axios.get(
-            `${process.env.API_CIELO_CONSULTA_DEV}/${process.env.URI_VENDA_CARTAO}` +
-                PaymentId
+            URLCielo + process.env.URI_VENDA_CARTAO + PaymentId
             , {
                 headers: {
                     MerchantId: process.env.MERCHANT_ID,
@@ -163,11 +175,17 @@ class VendaController {
             await logger.info("Efetivando Cancelamento...");
 
 
-            //Efetivando o cancelamento
-            const url = `${process.env.API_CIELO_DEV}/${process.env.URI_CANCELAMENTO}`;
+           //Efetivando o cancelamento\
+           // Recupera URL de Desenvolvimento ou Producao para acesso a Cielo
+           const URLCieloCancelamento = process.env.MODE_ENV === 'Producao' ?
+                           process.env.API_CIELO :
+                           process.env.API_CIELO_DEV;
+
+            const url = URLCieloCancelamento + process.env.URI_CANCELAMENTO ;
             const urlCancelamento = url.replace("{}", PaymentId).replace("$", Amount);
 
             await logger.info('API TOKEN Cancelamento: ' + urlCancelamento);
+            console.log('API TOKEN Cancelamento: ' + urlCancelamento);
 
             if (Amount > 0 ) {
                 const cancelamento = await axios.put(

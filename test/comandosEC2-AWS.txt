@@ -18,20 +18,25 @@ Content-Transfer-Encoding: 7bit
 Content-Disposition: attachment; filename="userdata.txt"
 
 #!/bin/bash
-/bin/echo "Hello World" >> /tmp/testfile.txt
+sudo pkill -f node
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install -y npm
 sudo npm cache clean -f
 sudo npm install -g -y n
 sudo n stable -y
-sudo npm install -g -y yarn
 cd /home/ubuntu
-mkdir apilogs
-chmod 775 apilogs
-sudo rm -rf ApiPayment
-git clone https://github.com/FabioMiguel07/ApiPayment.git
+cd backup
+novapasta=`date +%Y%m%d_%H%M` && mkdir $novapasta
+cd /home/ubuntu
+sudo mv ApiPayment ApiPayment_Old
+sudo mv ApiPayment_Old backup/$novapasta/ApiPayment_`date +%Y-%m-%d-%H-%M`
+sudo git clone https://github.com/FabioMiguel07/ApiPayment.git
 cd ApiPayment
-npm install
-npm start
+sudo npm install
+sudo npm start
 --//
+
+
+
+mvr1NGwE6aC0vKjERXMz3U5lwIZcU865t34M2Tpi

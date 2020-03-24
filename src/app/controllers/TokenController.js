@@ -1,10 +1,11 @@
 import * as Yup from 'yup';
 import axios from 'axios';
 import Token from "../models/Token";
-import Logger from '../../log/LoggerService';
-
+import Logger from '../../log/LoggerService'
+import Cryptr from 'cryptr';
 
 const logger = new Logger('TokenController');
+const crypt = new Cryptr(process.env.APP_SECRET);
 
 class TokenController {
 
@@ -29,11 +30,18 @@ class TokenController {
 
         } else {
 
-            const { links: {Href:Url} , customerName, cardToken, createAt } = pedido[0];
+            const { customerName, cardToken, createAt } = pedido[0];
 
             await logger.info("Cliente: ", customerName);
             await logger.info("Token Cartao: ", cardToken);
-            await logger.info("URL: ", Url);
+
+            //Recupera URL de Desenvolvimento ou Producao para acesso a Cielo
+            const URLCielo = process.env.MODE_ENV === 'Producao' ?
+                             process.env.API_CIELO_CONSULTA :
+                             process.env.API_CIELO_CONSULTA_DEV;
+
+            const Url = URLCielo + process.env.URI_TOKEN_CARTAO + crypt.decrypt(cardToken);
+            await logger.info("URL Consulta Cartao: ", Url);
 
             //Buscar Dados
             try {
@@ -58,7 +66,7 @@ class TokenController {
                     message: {
                         MerchantOrderId,
                         CustomerName: customerName,
-                        CardToken: cardToken,
+                        CardToken: crypt.decrypt(cardToken),
                         CardNumber,
                         Holder,
                         ExpirationDate,
@@ -70,10 +78,10 @@ class TokenController {
             } catch (e) {
                 await logger.error("Nao foram encontrados dados Pagamentos para o Pedido: " + MerchantOrderId);
                 return response.status(404).json({
-                    error: 99,
+                   error: 99,
                     message: "Nao foram encontrados dados Pagamentos para o Pedido: " + MerchantOrderId,
                     customerName,
-                    cardToken,
+                    CardNumber: crypt.decrypt(cardToken),
                     errorDesc: e.message
                  });
 
@@ -88,7 +96,6 @@ class TokenController {
 
         logger.setLogData(request.body);
         await logger.info("Request Recebido.. POST" , request.body);
-
 
         const { MerchantOrderId , CustomerName , CardNumber, Holder, ExpirationDate, Brand } = request.body;
 
@@ -108,10 +115,13 @@ class TokenController {
             });
         }
 
-        await logger.info("API GERAR TOKEN CARTAO.."  + `${process.env.API_CIELO_DEV}/${process.env.URI_TOKEN_CARTAO}`);
+        //Recupera URL de Desenvolvimento ou Producao para acesso a Cielo
+        const URLCielo = process.env.MODE_ENV === 'Producao' ? process.env.API_CIELO : process.env.API_CIELO_DEV;
+
+        await logger.info("API GERAR TOKEN CARTAO.."  + URLCielo + process.env.URI_TOKEN_CARTAO);
 
         const respCielo = await axios.post(
-            `${process.env.API_CIELO_DEV}/${process.env.URI_TOKEN_CARTAO}`,
+            URLCielo + process.env.URI_TOKEN_CARTAO,
             {CustomerName , CardNumber, Holder, ExpirationDate, Brand}
             , {
                 headers: {
@@ -122,22 +132,25 @@ class TokenController {
             }
         );
 
-        const { CardToken , Links} = respCielo.data;
+        const { CardToken } = respCielo.data;
 
-        console.log('Cartao Tokenizado: ' + CardToken);
         await logger.info("Response CIELO: "  + JSON.stringify(respCielo.data));
         await logger.info("Cartao Tokenizado: "  + CardToken);
+
+        const cardTokenCript = crypt.encrypt(CardToken);
+        await logger.info("Cartao Criptografado: " + cardTokenCript);
+
 
 
         //Cadastro do Cartao Tokenizado
         const token = await Token.create({
             merchantOrderId: MerchantOrderId,
             customerName: CustomerName,
-            cardToken: CardToken,
-            links: Links,
+            cardToken: cardTokenCript,
             createAt: new Date()
         });
 
+        token.cardToken = crypt.decrypt(token.cardToken);
         await logger.info("Token Gravado: "  + token._id);
 
         return response.status(200).json({

@@ -11,7 +11,10 @@ class ConfigMongoDB {
 
         logger.info("Inicializando Banco de Dados" , "MongoDB");
 
-        const stringConnection = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}` + process.env.MONGO_URL;
+        const mongoURL = process.env.MODE_ENV === 'Producao' ? process.env.MONGO_URL : process.env.MONGO_URL_DEV;
+
+        const stringConnection = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}`
+            + mongoURL;
 
         logger.info("String Connection: " + stringConnection, "MongoDB");
 

@@ -14,10 +14,6 @@ const TokenSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    links : {
-        Method: String,
-        Href: String
-    },
     createAt : {
         type: Date
     }
