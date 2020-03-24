@@ -4,14 +4,7 @@
     <list default="true" id="0849a653-4cf5-48af-8cea-e4de5b2a8edc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/controllers/TokenController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controllers/TokenController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/controllers/VendaController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controllers/VendaController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/models/Token.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/models/Token.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/ConfigMongoDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/ConfigMongoDB.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/comandosEC2-AWS.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/comandosEC2-AWS.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +120,7 @@
       <workItem from="1584810075425" duration="20461000" />
       <workItem from="1584886091952" duration="12499000" />
       <workItem from="1584977899624" duration="13322000" />
-      <workItem from="1585059168011" duration="8032000" />
+      <workItem from="1585059168011" duration="10048000" />
     </task>
     <servers />
   </component>
@@ -196,10 +189,10 @@
     <state width="1273" height="446" key="GridCell.Tab.0.right/0.0.1680.1050/1680.152.3008.1594@1680.152.3008.1594" timestamp="1584648453403" />
     <state width="1273" height="446" key="GridCell.Tab.0.right/0.0.1680.989/1680.152.3008.1669@1680.152.3008.1669" timestamp="1584724206128" />
     <state width="1292" height="638" key="GridCell.Tab.0.right/0.23.1680.1027/1680.152.3008.1594@1680.152.3008.1594" timestamp="1585068424543" />
-    <state x="1795" y="406" key="Vcs.Push.Dialog.v2" timestamp="1584985257875">
+    <state x="1795" y="406" key="Vcs.Push.Dialog.v2" timestamp="1585069613395">
       <screen x="1680" y="152" width="3008" height="1594" />
     </state>
-    <state x="1795" y="406" key="Vcs.Push.Dialog.v2/0.23.1680.1027/1680.152.3008.1594@1680.152.3008.1594" timestamp="1584985257875" />
+    <state x="1795" y="406" key="Vcs.Push.Dialog.v2/0.23.1680.1027/1680.152.3008.1594@1680.152.3008.1594" timestamp="1585069613395" />
     <state x="1795" y="418" key="Vcs.Push.Dialog.v2/0.23.1680.967/1680.152.3008.1669@1680.152.3008.1669" timestamp="1584540088035" />
     <state x="1795" y="418" key="Vcs.Push.Dialog.v2/0.23.1680.973/1680.152.3008.1669@1680.152.3008.1669" timestamp="1584980309748" />
   </component>
