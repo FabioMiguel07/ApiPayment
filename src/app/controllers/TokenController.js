@@ -29,7 +29,7 @@ class TokenController {
 
         } else {
 
-            const { customerName, cardToken, createAt } = pedido[0];
+            const { customerName, cardToken, createAt } = pedido[pedido.length -1];
 
             await logger.info("Cliente: ", customerName);
             await logger.info("Token Cartao: ", cardToken);

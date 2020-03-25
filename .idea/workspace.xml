@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0849a653-4cf5-48af-8cea-e4de5b2a8edc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/controllers/TokenController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controllers/TokenController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/controllers/VendaController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controllers/VendaController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/models/Token.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/models/Token.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/ConfigMongoDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/ConfigMongoDB.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +91,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="ApiPagamento: root" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@12164fa7" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@555b0d3d" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
             </expand>
             <select />
@@ -123,7 +119,8 @@
       <workItem from="1584810075425" duration="20461000" />
       <workItem from="1584886091952" duration="12499000" />
       <workItem from="1584977899624" duration="13322000" />
-      <workItem from="1585059168011" duration="16710000" />
+      <workItem from="1585059168011" duration="17275000" />
+      <workItem from="1585146552754" duration="387000" />
     </task>
     <servers />
   </component>
@@ -168,34 +165,34 @@
       <screen x="1680" y="152" width="3008" height="1669" />
     </state>
     <state x="2140" y="625" key="Github.ShareDialog/0.23.1680.967/1680.152.3008.1669@1680.152.3008.1669" timestamp="1584540067346" />
-    <state width="1292" height="638" key="GridCell.Tab.0.bottom" timestamp="1585092467140">
+    <state width="1194" height="645" key="GridCell.Tab.0.bottom" timestamp="1585147152681">
       <screen x="1680" y="152" width="3008" height="1594" />
     </state>
     <state width="1273" height="446" key="GridCell.Tab.0.bottom/0.0.1680.1050/1680.152.3008.1594@1680.152.3008.1594" timestamp="1584648453404" />
     <state width="1273" height="446" key="GridCell.Tab.0.bottom/0.0.1680.989/1680.152.3008.1669@1680.152.3008.1669" timestamp="1584724206128" />
-    <state width="1292" height="638" key="GridCell.Tab.0.bottom/0.23.1680.1027/1680.152.3008.1594@1680.152.3008.1594" timestamp="1585092467140" />
-    <state width="1292" height="638" key="GridCell.Tab.0.center" timestamp="1585092467139">
+    <state width="1194" height="645" key="GridCell.Tab.0.bottom/0.23.1680.1027/1680.152.3008.1594@1680.152.3008.1594" timestamp="1585147152681" />
+    <state width="1194" height="645" key="GridCell.Tab.0.center" timestamp="1585147152680">
       <screen x="1680" y="152" width="3008" height="1594" />
     </state>
     <state width="1273" height="446" key="GridCell.Tab.0.center/0.0.1680.1050/1680.152.3008.1594@1680.152.3008.1594" timestamp="1584648453402" />
     <state width="1273" height="446" key="GridCell.Tab.0.center/0.0.1680.989/1680.152.3008.1669@1680.152.3008.1669" timestamp="1584724206127" />
-    <state width="1292" height="638" key="GridCell.Tab.0.center/0.23.1680.1027/1680.152.3008.1594@1680.152.3008.1594" timestamp="1585092467139" />
-    <state width="1292" height="638" key="GridCell.Tab.0.left" timestamp="1585092467138">
+    <state width="1194" height="645" key="GridCell.Tab.0.center/0.23.1680.1027/1680.152.3008.1594@1680.152.3008.1594" timestamp="1585147152680" />
+    <state width="1194" height="645" key="GridCell.Tab.0.left" timestamp="1585147152679">
       <screen x="1680" y="152" width="3008" height="1594" />
     </state>
     <state width="1273" height="446" key="GridCell.Tab.0.left/0.0.1680.1050/1680.152.3008.1594@1680.152.3008.1594" timestamp="1584648453401" />
     <state width="1273" height="446" key="GridCell.Tab.0.left/0.0.1680.989/1680.152.3008.1669@1680.152.3008.1669" timestamp="1584724206125" />
-    <state width="1292" height="638" key="GridCell.Tab.0.left/0.23.1680.1027/1680.152.3008.1594@1680.152.3008.1594" timestamp="1585092467138" />
-    <state width="1292" height="638" key="GridCell.Tab.0.right" timestamp="1585092467139">
+    <state width="1194" height="645" key="GridCell.Tab.0.left/0.23.1680.1027/1680.152.3008.1594@1680.152.3008.1594" timestamp="1585147152679" />
+    <state width="1194" height="645" key="GridCell.Tab.0.right" timestamp="1585147152680">
       <screen x="1680" y="152" width="3008" height="1594" />
     </state>
     <state width="1273" height="446" key="GridCell.Tab.0.right/0.0.1680.1050/1680.152.3008.1594@1680.152.3008.1594" timestamp="1584648453403" />
     <state width="1273" height="446" key="GridCell.Tab.0.right/0.0.1680.989/1680.152.3008.1669@1680.152.3008.1669" timestamp="1584724206128" />
-    <state width="1292" height="638" key="GridCell.Tab.0.right/0.23.1680.1027/1680.152.3008.1594@1680.152.3008.1594" timestamp="1585092467139" />
-    <state x="1795" y="406" key="Vcs.Push.Dialog.v2" timestamp="1585074265518">
+    <state width="1194" height="645" key="GridCell.Tab.0.right/0.23.1680.1027/1680.152.3008.1594@1680.152.3008.1594" timestamp="1585147152680" />
+    <state x="1795" y="406" key="Vcs.Push.Dialog.v2" timestamp="1585092865228">
       <screen x="1680" y="152" width="3008" height="1594" />
     </state>
-    <state x="1795" y="406" key="Vcs.Push.Dialog.v2/0.23.1680.1027/1680.152.3008.1594@1680.152.3008.1594" timestamp="1585074265518" />
+    <state x="1795" y="406" key="Vcs.Push.Dialog.v2/0.23.1680.1027/1680.152.3008.1594@1680.152.3008.1594" timestamp="1585092865228" />
     <state x="1795" y="418" key="Vcs.Push.Dialog.v2/0.23.1680.967/1680.152.3008.1669@1680.152.3008.1669" timestamp="1584540088035" />
     <state x="1795" y="418" key="Vcs.Push.Dialog.v2/0.23.1680.973/1680.152.3008.1669@1680.152.3008.1669" timestamp="1584980309748" />
   </component>
