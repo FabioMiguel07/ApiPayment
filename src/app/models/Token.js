@@ -22,7 +22,7 @@ const TokenSchema = new mongoose.Schema({
 });
 
 TokenSchema.index({
-    merchantOrderId: 2
+    merchantOrderId: 3
 });
 
 export default mongoose.model('Token', TokenSchema);
